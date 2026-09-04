@@ -4,3 +4,12 @@
     de nuestra tienda virtual, puedes escoger entre varios porductos y escoger la mejor 
     eleccion de acuerdo a tu conveniencia o lo que desees adquirir
  </p>
+
+ <div *ngFor="let producto of productos">
+    <h2>{{producto.nombre}}</h2>
+    <p>{{producto.descripcion}}</p>
+    <p>{{producto.precio}}</p>
+    <p>{{producto.stock}}</p>
+    <img [src]="producto.imagen" alt="">
+     </div>
+

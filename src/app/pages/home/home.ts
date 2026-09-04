@@ -1,18 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../services/api';
+import { CommonModule } from '@angular/common';
+
+
+
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class HomeComponent {
-  product = {
-  name: 'Cadena Plateada',
-  category: 'Accesorios',
-  image: 'assets/imagenes/cadena.jpg',
-  oldPrice: 80,
-  price: 60
+export class HomeComponent implements OnInit{
+  categorias : any[] = [];
+  productos : any[] = [];
+
+  //inyectar el servicioo
+
+  constructor(private apiService : ApiService){}
+
+  ngOnInit() {
+    //traer las categorias
+    this.apiService.getCategorias().subscribe({
+      next:(data) => this.categorias = data,
+      error: (err)=> console.error('error al obtener los categorias' , err)
+    });
+    
+    //traer los productos
+
+    this.apiService.getProductos().subscribe({
+      next : (data) => this.productos =data,
+      error: (err)=> console.error('error al obtener los productos', err)
+      
+
+    })
+  }
 };
 
-}

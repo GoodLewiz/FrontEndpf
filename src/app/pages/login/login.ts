@@ -5,6 +5,8 @@ import {
   ReactiveFormsModule,
   Validators
 } from '@angular/forms';
+import { Authservice } from '../../services/auth';
+import { email } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-login',
@@ -37,6 +39,15 @@ loginForm : any
 
     console.log(this.loginForm.value);
 
+    // constructor(private authService : Authservice){}
+    
+    //this.authService.login(this.loginForm.value).subscribe({
+     // next : (data) => =data,
+      //error: (err)=> console.error('error al iniciar sesion', err)
+      
+
+    //})
+    //console.log(this.login)
     /*
       {
         email: 'usuario@correo.com',
