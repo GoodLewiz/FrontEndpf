@@ -10,12 +10,12 @@ import { tap } from "rxjs";
 })
 
 export class Authservice{
-    private apiUrl ='http://localhost:3000';
+    private apiUrl = '';
 
      constructor (private http : HttpClient){}
 
     login(email: string, password : string){
-        return this.http.post<any>(`${this.apiUrl}auth/login`,{email, password})
+        return this.http.post<any>(`${this.apiUrl}/auth/login`,{email, password})
         .pipe(
             tap(response=>{
                 if(response.token){

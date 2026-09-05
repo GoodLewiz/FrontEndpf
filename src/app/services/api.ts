@@ -5,7 +5,7 @@ import { Authservice } from './auth';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = '';
 
   constructor(private http: HttpClient, private authService: Authservice){}
 
