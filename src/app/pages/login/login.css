@@ -92,3 +92,13 @@ button:disabled{
     background:#94a3b8;
     cursor:not-allowed;
 }
+
+.error-msg{
+    margin-top: 15px;
+    padding: 10px;
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    text-align: center;
+}

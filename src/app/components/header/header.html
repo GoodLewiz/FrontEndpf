@@ -12,5 +12,11 @@
 
   <div class="cart-section">
     <button class="cart-btn">🛒 Carrito</button>
+
+    <div class="user-status" *ngIf="sesionIniciada">
+      <span class="status-dot" title="Sección iniciada"></span>
+      <span class="status-text">Conectado</span>
+      <button class="logout-btn" (click)="cerrarSesion()">Cerrar sesión</button>
+    </div>
   </div>
 </header>
